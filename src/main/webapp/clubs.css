@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #f5f5dc, #f5f5dc);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+	position:absolute;
+	top:35%;
+	left:10%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    
+   
+}
+
+.container .card {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: scale(1.1);;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card i {
+    font-size: 48px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.card:hover i {
+    transform: translateY(-30px); /* Move the icon up */
+}
+
+.one {
+    background-color: #E95950;
+    
+}
+
+.two {
+    background-color: #1DA1F2;
+}
+
+.three {
+    background-color: #2EA043;
+
+}
+.four {
+    background-color: #c80a0a;
+
+}
+.five{
+    background-color: aqua;
+}
+.card a{
+    color: #333;
+    font-size: 18px;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .description {
+    transform: translateY(0);
+}
+.card:hover img {
+    transform: translate(0px,-42px); /* Move the image up on hover */
+    
+}
+
+.description h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.description p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}

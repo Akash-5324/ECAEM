@@ -1,0 +1,81 @@
+.navbar{
+    background-color: #333;
+    height: 80px;
+    
+    
+    padding: 0.5rem;
+}
+
+.nav-item{
+    color: #2EA043;
+}
+
+.navbar-brand{
+    font-weight: 500;
+    color: #f5f5dc;
+    font-weight: bold;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    letter-spacing: 18px;
+    font-size: 24px;
+    transition: 0.3ms color;
+}
+
+.login-button {
+    background-color: #f5f5dc;
+    color: #333;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-position 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #f5f5dc, #333);
+    background-size: 900% 50%;
+    background-position: left;
+ }
+
+.login-button:hover {
+    background-position: right;
+    
+    color: #f5f5dc; /* Optional: changes text color on hover */
+ }
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+}
+.nav-link:hover, .nav-link.active {
+    color: #f5f5dc;
+
+}
+
+.nav-link::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #f5f5dc;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.nav-link:hover::before, .nav-link:active::before{
+    width: 100%;
+    visibility: visible;
+}

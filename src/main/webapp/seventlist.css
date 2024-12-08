@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #f5f5dc, #f5f5dc);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.event-list-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .list-page-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .event-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+  }
+  
+  /* Event Card */
+  .event-list-card {
+    background-color: #333;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    opacity: 0;
+    animation: slideUp 1s forwards;
+  }
+  
+  .event-list-card:nth-child(odd) {
+    animation-delay: 0.3s;
+  }
+  
+  .event-list-card:nth-child(even) {
+    animation-delay: 0.6s;
+  }
+  
+  .event-list-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Fixed height for consistency */
+  .event-list-info {
+    text-align: left;
+    min-height: 160px; /* Set a fixed height for consistent button alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .event-list-title {   /*  event card text   */
+    font-size: 1.5em;
+    color: #f5f5dc;
+  }
+  
+  .event-list-date, .event-list-location {
+    font-size: 0.8em;
+    color: #f5f5dc;
+    margin-top: 5px;
+  }
+  
+  .list-details-btn {
+    margin-left: 50px;
+    margin-top: 15px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    color: #333;
+    background-color: #f5f5dc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .list-details-btn:hover {
+    background-color: #333;
+    color: #f5f5dc;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }

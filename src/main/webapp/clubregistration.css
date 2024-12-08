@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #f5f5dc, #f5f5dc);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.club-main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.club-abmin-heading{
+    color: #f5f5dc;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+.club-abmin-container {
+    position: absolute;
+    width: 50%;
+    top: 20%;
+    left: 27%;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+.club-form {
+    margin-top: 60px;
+    margin-bottom: 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    gap: 10px;
+    
+}
+.form-group-colour {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    gap: 80px;
+    color: #f5f5dc;
+}
+
+.form-group label {
+    width: 150px; /* Adjust width to align labels */
+    font-size: 16px;
+    font-weight: bold;
+    color: #f5f5dc;
+}
+.form-group-colour button {
+    width: 150px; /* Adjust width to align labels */
+    font-size: 16px;
+    font-weight: bold;
+    color: #f5f5dc;
+}
+
+
+
+button {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #f5f5dc;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 45px;
+        font-size: 1rem;
+        background-color: #f5f5dc;
+}
+
+.form-group-colour input {
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    background-color: #f5f5dc;
+    border: 2px solid #ccc;
+    border-radius: 100px;
+    font-size: 15rem;
+
+}
+
+.save button{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    text-transform: uppercase;
+    color: #333;
+    background:#f5f5dc;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 12px;
+    user-select: none;
+  cursor: pointer;
+  border-radius: 45px;
+  height: 35px;
+  width: 75px;
+  }
+  
+  .save button i{
+    font-size: 10px;
+    margin-right: 5px;
+  }
+  
+  .save button:active{
+    transform: scale(0.9);
+  }
+
+@media (max-width: 600px) {
+    .club {
+        flex-direction: column;
+    }
+
+    .club-actions {
+        margin-top: 1rem;
+    }
+}
