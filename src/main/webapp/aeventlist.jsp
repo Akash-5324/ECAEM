@@ -7,13 +7,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="seventlist.css">
-    <%@ include file="clubnav.jsp" %>
+    <%@ include file="adminnav.jsp" %>
 </head>
 <body>
 	<div class="event-list-container">
-        <h1 class="list-page-title">My Registered Events</h1>
         <c:forEach var="event" items="${events}">
-        <form method="POST" action="students">
+        <form method="POST" action="astudents">
         <div class="event-list">
           <!-- Event Cards -->
           <div class="event-list-card">

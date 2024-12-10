@@ -157,7 +157,7 @@ public class ClubController {
         if (session == null || session.getAttribute("club") == null) {
             // Session is null or does not contain a "club" attribute, meaning the user is logged out
             ModelAndView mv = new ModelAndView();
-            mv.setViewName("clubAdminLogin");
+            mv.setViewName("ClubAdminLogin");
             mv.addObject("message", "Please log in to access this page.");
             return mv;
         }
@@ -178,7 +178,7 @@ public class ClubController {
     	 HttpSession session = request.getSession(false);
 
          if (session == null || session.getAttribute("club") == null) {
-             ModelAndView mv = new ModelAndView("studentlogin");
+             ModelAndView mv = new ModelAndView("ClubAdminLogin");
              mv.addObject("message", "Please log in to access this page.");
              return mv;
          }
@@ -194,20 +194,26 @@ public class ClubController {
          return mv;    
     }
 	
-//	@PostMapping("students")
-//	public ModelAndView students(HttpServletRequest request) {
-//		HttpSession session = request.getSession(false);
-//
-//        if (session == null || session.getAttribute("club") == null) {
-//            ModelAndView mv = new ModelAndView("studentlogin");
-//            mv.addObject("message", "Please log in to access this page.");
-//            return mv;
-//        }
-//        Club club = (Club) session.getAttribute("club");
-//        
-//       int cid = Integer.parseInt(request.getParameter("eventId"));
-//        
-//        clubService.getStudentsByEventId(0)
-//	}
+	@PostMapping("students")
+	public ModelAndView students(HttpServletRequest request) {
+	    HttpSession session = request.getSession(false);
+
+	    if (session == null || session.getAttribute("club") == null) {
+	        ModelAndView mv = new ModelAndView("ClubAdminLogin");
+	        mv.addObject("message", "Please log in to access this page.");
+	        return mv;
+	    }
+	    Club club = (Club) session.getAttribute("club");
+	    
+	    int eid = Integer.parseInt(request.getParameter("eventId"));
+	    
+	    List<Student> students = clubService.getStudentsByEventId(eid);
+	    
+	    ModelAndView mv = new ModelAndView("students");
+	    mv.addObject("students", students);
+	    
+	    return mv;
+	}
+
 	
 }

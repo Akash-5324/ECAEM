@@ -31,7 +31,7 @@
                             <a class="nav-link mx-tg-2" aria-current="page" href="adminhome">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-tg-2" href="#">Events</a>
+                            <a class="nav-link mx-tg-2" href="aclubs">Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-tg-2" href="#">Achievements</a>

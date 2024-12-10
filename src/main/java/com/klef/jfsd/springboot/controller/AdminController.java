@@ -87,14 +87,14 @@ public class AdminController
         if (existingClub != null) 
         {
             mv.addObject("message", "Club Already Exist");
-            mv.setViewName("studentlogin");
+            mv.setViewName("adminhome");
         }
         
         else 
         {
 	        String message = adminService.addClub(club);
 	        mv.addObject("message", message);
-	        mv.setViewName("studentlogin");
+	        mv.setViewName("adminhome");
         }
         return mv;
     }
@@ -149,6 +149,66 @@ public class AdminController
 		mv.setViewName("club");
 		return mv;
     }
+    
+    @GetMapping("aclubs")
+    public ModelAndView aclubs(HttpServletRequest request) {
+    	ModelAndView mv = new ModelAndView();
+		
+		 // Invalidate the session to log out the Club
+       HttpSession session = request.getSession(false); // get the existing session if it exists
+       if (session == null || session.getAttribute("admin") == null) {
+           // Session is null or does not contain a "admin" attribute, meaning the user is logged out
+           mv.setViewName("ClubAdminLogin");
+           mv.addObject("message", "Please log in to access this page.");
+           return mv;
+       }
+		
+		mv.setViewName("aclubs");
+		List<Club> clubs = adminService.viewAllClubs();
+		mv.addObject("clublist", clubs);
+		return mv;
+    }
+    
+    @PostMapping("amyevents")
+    public ModelAndView myevents(HttpServletRequest request) {
+    	 HttpSession session = request.getSession(false);
+
+         if (session == null || session.getAttribute("admin") == null) {
+             ModelAndView mv = new ModelAndView("ClubAdminLogin");
+             mv.addObject("message", "Please log in to access this page.");
+             return mv;
+         }
+         
+         int cid = Integer.parseInt(request.getParameter("cid"));
+         
+         List<Event> events = clubService.findEventById(cid);
+         
+         ModelAndView mv = new ModelAndView("aeventlist");
+         
+         mv.addObject("events", events);
+         
+         return mv;    
+    }
+    
+    @PostMapping("astudents")
+	public ModelAndView students(HttpServletRequest request) {
+	    HttpSession session = request.getSession(false);
+
+	    if (session == null || session.getAttribute("admin") == null) {
+	        ModelAndView mv = new ModelAndView("ClubAdminLogin");
+	        mv.addObject("message", "Please log in to access this page.");
+	        return mv;
+	    }
+	    
+	    int eid = Integer.parseInt(request.getParameter("eventId"));
+	    
+	    List<Student> students = clubService.getStudentsByEventId(eid);
+	    
+	    ModelAndView mv = new ModelAndView("students");
+	    mv.addObject("students", students);
+	    
+	    return mv;
+	}
     
     @GetMapping("adminlogout")
     public ModelAndView adminlogout(HttpServletRequest request) {
